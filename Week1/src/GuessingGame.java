@@ -78,6 +78,3 @@ public class GuessingGame {
                 nGames, nGuess, (nGuess * 1.0 / nGames), minGuess);
     }
 }
-
-
-
