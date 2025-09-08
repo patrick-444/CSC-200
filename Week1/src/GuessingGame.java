@@ -2,6 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingGame {
+
+    public static final int MAXIMUM_NUMBER = 100; // class constant for upper bound
+    public static final Random rand = new Random(); // class level random var
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -11,8 +15,8 @@ public class GuessingGame {
         char goAgain = 'n';
 
         System.out.print("This program allows you to guess " +
-                "random numbers.\nI will think of a random number " +
-                "between 1 and 100\nand you will try to guess it.\n" +
+                "random numbers.\nI will think of a number " +
+                "between 1 and " + MAXIMUM_NUMBER + "\nand you will try to guess it.\n" +
                 "After each guess, I will give you a clue about\nwhether " +
                 "the correct number is higher or lower.\n\n");
 
@@ -22,7 +26,7 @@ public class GuessingGame {
                 System.out.println();
             }
 
-            int correctAns = generateNum();
+            int correctAns = generateNum(rand);
             int gameGuesses = guessNum(scan, correctAns);
 
             allGames++;
@@ -30,7 +34,7 @@ public class GuessingGame {
             if (gameGuesses < bestGame) {
                 bestGame = gameGuesses;
             }
-            scan.nextLine(); // buffer flush
+            // scan.nextLine(); // buffer flush
             goAgain = playAgain(gameGuesses, scan);
 
         } while (goAgain == 'y');
@@ -39,17 +43,17 @@ public class GuessingGame {
 
     }
 
-    public static int generateNum() {
+    public static int generateNum(Random rand) {
         System.out.println("I'm thinking of a number " +
-        "between 1 and 100...");
-        Random rand = new Random();
-        int number = rand.nextInt(100) + 1;
+        "between 1 and " + MAXIMUM_NUMBER + "...");
+        int number = rand.nextInt(MAXIMUM_NUMBER) + 1;
         return number;
     }
 
     public static int guessNum(Scanner scan, int ans) {
         System.out.print("Your guess? ");
         int guess = scan.nextInt();
+        scan.nextLine(); // buffer flush
         int numGuesses = 1;
         while (guess != ans) {
             if (guess > ans) {
@@ -59,7 +63,8 @@ public class GuessingGame {
             }
             numGuesses++;
             System.out.print("Your guess? ");
-            guess = scan.nextInt();
+            guess = Integer.parseInt(scan.nextLine());
+            // scan.nextLine(); // buffer flush
         }
         return numGuesses;
     }
@@ -73,8 +78,12 @@ public class GuessingGame {
     }
 
     public static void gameStats(int nGames, int nGuess, int minGuess) {
-        System.out.printf("\nOverall results:\nTotal games = %d\n" +
-        "Total guesses = %d\nGuesses/game = %.1f\nBest game = %d\n",
-                nGames, nGuess, (nGuess * 1.0 / nGames), minGuess);
+
+        System.out.print("Overall results:\n");
+        System.out.printf("Total games   = %d\n", nGames);
+        System.out.printf("Total guesses = %d\n", nGuess);
+        System.out.printf("Guesses/game  = %.1f\n", (nGuess * 1.0 / nGames));
+        System.out.printf("Best game     = %d\n", minGuess);
+
     }
 }
