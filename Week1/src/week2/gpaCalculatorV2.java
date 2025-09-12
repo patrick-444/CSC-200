@@ -1,8 +1,8 @@
 /**
  * @author Patrick Rooney
  * @since September 11, 2025
- * description: prompt the user for how many classes they are taking, and then calculate
- * their GPA. use an array of objects instead of parallel arrays for this task.
+ * description: Application file. Prompt the user for how many classes they are taking, and then calculate
+ * their GPA. Use an array of objects instead of parallel arrays for this task.
  */
 
 package week2; // comment out if necessary

@@ -102,7 +102,7 @@ REVISED CODE FOR GETTING GUESSES
 import java.util.Random;
 import java.util.Scanner;
 
-public class GuessingGame2 {
+public class week1.GuessingGame2 {
 
     private static final int MAX_VAL = 100;
 
