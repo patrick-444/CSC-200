@@ -71,9 +71,9 @@ public class Stapler
 	{
         if (this.closed && (this.staples > 0)) {
             this.staples--;
-            System.out.println("Used one staple.");
+            // System.out.println("Used one staple."); // debug print
         } else {
-            System.out.println("Stapler is either open or does not contain any staples!");
+            // System.out.println("Stapler is either open or does not contain any staples!"); // debug print
         }
 	}
 
@@ -89,9 +89,9 @@ public class Stapler
             } else { // case of "underfilling"
                 this.staples += moreStaples;
             }
-            System.out.println("Added staples");
+            // System.out.println("Added staples"); // debug print
         } else {
-            System.out.println("Stapler is either closed or already at capacity!");
+            // System.out.println("Stapler is either closed or already at capacity!"); // debug print
         }
 	}
 

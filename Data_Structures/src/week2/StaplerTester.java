@@ -95,27 +95,12 @@ test1 status:   staples = 0     capacity = 250  closed = true
 test2 status:   staples = 25    capacity = 100  closed = true
 test3 status:   staples = 25    capacity = 100  closed = true
 
-Stapler is either open or does not contain any staples!
-Stapler is either open or does not contain any staples!
-Used one staple.
-Used one staple.
-Stapler is either open or does not contain any staples!
-Stapler is either open or does not contain any staples!
 FIRST CHANGES
 test1 status:   staples = 0     capacity = 250  closed = true
 test2 status:   staples = 23    capacity = 100  closed = true
 test3 status:   staples = 25    capacity = 100  closed = false
 
 
-Added staples
-Stapler is either open or does not contain any staples!
-Stapler is either open or does not contain any staples!
-Stapler is either closed or already at capacity!
-Stapler is either open or does not contain any staples!
-Stapler is either open or does not contain any staples!
-Added staples
-Used one staple.
-Used one staple.
 SECOND CHANGES
 test1 status:   staples = 250   capacity = 250  closed = false
 test2 status:   staples = 23    capacity = 100  closed = false
