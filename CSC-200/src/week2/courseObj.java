@@ -5,7 +5,7 @@
  * parallel arrays.
  */
 
-package week2; // comment out if necessary
+// package week2; // comment out if necessary
 
 public class courseObj {
     private String className;

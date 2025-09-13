@@ -5,7 +5,7 @@
  * their GPA. Use an array of objects instead of parallel arrays for this task.
  */
 
-package week2; // comment out if necessary
+// package week2; // comment out if necessary
 import java.util.Scanner;
 
 public class gpaCalculatorV2 {
